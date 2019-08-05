@@ -1,3 +1,4 @@
+package com.bae.accountmaker.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -9,33 +10,37 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.bae.accountmaker.Service.AccountService;
+import com.bae.accountmaker.entity.Account;
+import com.bae.accountmaker.service.AccountService;
 
 @RestController
 @RequestMapping("/Account")
 public class AccountController {
-	
+
 	private AccountService service;
-	
+
+	public AccountController() {
+	}
+
 	@Autowired
 	public AccountController(AccountService service) {
 		this.service = service;
 	}
-	
+
 	@GetMapping("/getAllAccounts")
 	public ResponseEntity<Object> getAllProducts() {
 		return new ResponseEntity<>(service.getAllAccounts(), HttpStatus.OK);
 	}
-	
-	@GetMapping("/getAccount/${id}")
+
+	@GetMapping("/getAccount/{id}")
 	public ResponseEntity<Object> getProduct(@PathVariable Long id) {
 		return new ResponseEntity<>(service.getAccount(id), HttpStatus.OK);
 	}
-	
+
 	@PostMapping("/postAccount")
 	public ResponseEntity<Object> createAccount(@RequestBody Account account) {
 		service.createAccount(account);
 		return new ResponseEntity<>("Account Created", HttpStatus.OK);
 	}
-	
+
 }

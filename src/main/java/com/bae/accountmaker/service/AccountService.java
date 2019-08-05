@@ -1,12 +1,14 @@
 package com.bae.accountmaker.service;
 
 import java.util.List;
-import java.util.Optional;
+
+import org.springframework.stereotype.Service;
 
 import com.bae.accountmaker.entity.Account;
 
+@Service
 public interface AccountService {
-	Optional<Account> getAccount(Long id);
+	Account getAccount(Long id);
 
 	List<Account> getAllAccounts();
 

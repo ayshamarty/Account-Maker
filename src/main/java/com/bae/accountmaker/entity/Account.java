@@ -29,11 +29,14 @@ public class Account {
 		this.prize = prize;
 	}
 
-	public Account(Long accountID, String firstName, String lastName) {
+	public Account(String firstName, String lastName) {
 		super();
-		this.accountID = accountID;
 		this.firstName = firstName;
 		this.lastName = lastName;
+	}
+
+	public Account() {
+		super();
 	}
 
 	public Long getAccountID() {
