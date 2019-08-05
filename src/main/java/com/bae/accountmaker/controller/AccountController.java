@@ -29,7 +29,7 @@ public class AccountController {
 	
 	@GetMapping("/getAccount/${id}")
 	public ResponseEntity<Object> getProduct(@PathVariable Long id) {
-		return new ResponseEntity<>(service.getAccount(), HttpStatus.OK);
+		return new ResponseEntity<>(service.getAccount(id), HttpStatus.OK);
 	}
 	
 	@PostMapping("/postAccount")
