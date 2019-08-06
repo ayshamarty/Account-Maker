@@ -1,4 +1,4 @@
-package com.bae.accountmaker.entity;
+package com.bae.accountmaker.persistence.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -16,10 +16,6 @@ public class Account {
 	private String accountNumber;
 	private String prize;
 
-	public Account(String firstName) {
-		this.firstName = firstName;
-	}
-
 	public Account(Long accountID, String firstName, String lastName, String accountNumber, String prize) {
 		super();
 		this.accountID = accountID;
@@ -29,8 +25,9 @@ public class Account {
 		this.prize = prize;
 	}
 
-	public Account(String firstName, String lastName) {
+	public Account(Long accountID, String firstName, String lastName) {
 		super();
+		this.accountID = accountID;
 		this.firstName = firstName;
 		this.lastName = lastName;
 	}
@@ -68,8 +65,8 @@ public class Account {
 		return accountNumber;
 	}
 
-	public void setAccountNumber(String accountNumber) {
-		this.accountNumber = accountNumber;
+	public void setAccountNumber(String generatedAccountNumber) {
+		this.accountNumber = generatedAccountNumber;
 	}
 
 	public String getPrize() {

@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.bae.accountmaker.entity.Account;
+import com.bae.accountmaker.persistence.entity.Account;
 import com.bae.accountmaker.service.AccountService;
 
 @RestController
@@ -22,18 +22,19 @@ public class AccountController {
 	public AccountController() {
 	}
 
+	// field injection of AccountService
 	@Autowired
 	public AccountController(AccountService service) {
 		this.service = service;
 	}
 
 	@GetMapping("/getAllAccounts")
-	public ResponseEntity<Object> getAllProducts() {
+	public ResponseEntity<Object> getAllAccounts() {
 		return new ResponseEntity<>(service.getAllAccounts(), HttpStatus.OK);
 	}
 
 	@GetMapping("/getAccount/{id}")
-	public ResponseEntity<Object> getProduct(@PathVariable Long id) {
+	public ResponseEntity<Object> getAccount(@PathVariable Long id) {
 		return new ResponseEntity<>(service.getAccount(id), HttpStatus.OK);
 	}
 
