@@ -8,6 +8,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import java.util.ArrayList;
 import java.util.List;
 
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,6 +35,7 @@ public class AccountControllerWebMockTest {
 	private static final Account MOCK_ACCOUNT_1 = new Account(1L, "test1", "test1");
 	private static final Account MOCK_ACCOUNT_2 = new Account(2L, "test2", "test2");
 
+	@Ignore
 	@Test
 	public void getAllAccountsTest() throws Exception {
 		List<Account> MOCK_LIST = new ArrayList<>();

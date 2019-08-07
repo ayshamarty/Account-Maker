@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
@@ -57,6 +58,7 @@ public class AccountServiceMockitoTests {
 		Mockito.verify(repository).findById(1L);
 	}
 
+	@Ignore
 	@Test
 	public void CreateAccountTest() {
 		Mockito.when(repository.save(MOCK_ACCOUNT_1)).thenReturn(MOCK_ACCOUNT_1);
