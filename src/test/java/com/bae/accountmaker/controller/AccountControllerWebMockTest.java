@@ -17,7 +17,7 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 
-import com.bae.accountmaker.persistence.entity.Account;
+import com.bae.accountmaker.persistence.domain.Account;
 import com.bae.accountmaker.service.AccountService;
 
 @RunWith(SpringRunner.class)

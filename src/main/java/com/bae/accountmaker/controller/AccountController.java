@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.bae.accountmaker.persistence.entity.Account;
+import com.bae.accountmaker.persistence.domain.Account;
 import com.bae.accountmaker.service.AccountService;
 
 @RestController
@@ -41,7 +41,7 @@ public class AccountController {
 	@PostMapping("/postAccount")
 	public ResponseEntity<Object> createAccount(@RequestBody Account account) {
 		service.createAccount(account);
-		return new ResponseEntity<>("Account Created", HttpStatus.OK);
+		return new ResponseEntity<>("Account Created", HttpStatus.CREATED);
 	}
 
 }

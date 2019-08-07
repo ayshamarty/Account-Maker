@@ -1,4 +1,4 @@
-package com.bae.accountmaker.persistence.entity;
+package com.bae.accountmaker.persistence.domain;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

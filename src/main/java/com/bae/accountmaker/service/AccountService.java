@@ -4,7 +4,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import com.bae.accountmaker.persistence.entity.Account;
+import com.bae.accountmaker.persistence.domain.Account;
 
 @Service
 public interface AccountService {
