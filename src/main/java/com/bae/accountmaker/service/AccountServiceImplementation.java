@@ -55,7 +55,7 @@ public class AccountServiceImplementation implements AccountService {
 	}
 
 	public String getNumber() {
-		ResponseEntity<String> generatedAccountNumber = restTemplate.exchange("http://localhost:8081/getAccountNumber",
+		ResponseEntity<String> generatedAccountNumber = restTemplate.exchange("http://num-gen:8081/getAccountNumber",
 				HttpMethod.GET, null, String.class);
 		String generatedNumber = generatedAccountNumber.getBody();
 		return generatedNumber;
@@ -64,7 +64,7 @@ public class AccountServiceImplementation implements AccountService {
 
 	public String getPrize(String generatedNumber) {
 		ResponseEntity<String> generatedPrize = restTemplate
-				.exchange("http://localhost:8082/getPrize/" + generatedNumber, HttpMethod.GET, null, String.class);
+				.exchange("http://prize-gen:8082/getPrize/" + generatedNumber, HttpMethod.GET, null, String.class);
 		String prize = generatedPrize.getBody();
 		return prize;
 	}
