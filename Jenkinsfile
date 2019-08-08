@@ -4,7 +4,7 @@ pipeline{
         stages{
 		stage('---build---'){
                         steps{
-                               sh "docker build -t ayshamarty/account-maker ."
+                               sh "docker-compose up --build -d"
                         }
                 }
 		stage('---push---'){

@@ -1,0 +1,10 @@
+version: '3.3'
+services:
+
+    account:
+      image: ayshamarty/account-maker:latest
+      build:
+        context: ./Account-Maker
+        dockerfile: Dockerfile
+      ports:
+      - "8090:8090"
