@@ -12,5 +12,12 @@ pipeline{
 				sh "docker push ayshamarty/account-maker"
 			}
 		}
+
+                stage('---redeploy stack---') {
+                    steps {
+                            build job: "/job/Account-API-Deploy/master", wait: true
+
+			}
+		}
 	}
 }
