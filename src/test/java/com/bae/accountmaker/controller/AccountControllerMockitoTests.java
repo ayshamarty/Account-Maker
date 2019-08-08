@@ -56,7 +56,7 @@ public class AccountControllerMockitoTests {
 	@Test
 	public void CreateAccountTest() {
 		Mockito.when(service.createAccount(MOCK_ACCOUNT_1)).thenReturn(MOCK_ACCOUNT_1);
-		assertEquals("Account Created", controller.createAccount(MOCK_ACCOUNT_1).getBody());
+		assertEquals(MOCK_ACCOUNT_1, controller.createAccount(MOCK_ACCOUNT_1).getBody());
 		Mockito.verify(service).createAccount(MOCK_ACCOUNT_1);
 	}
 
