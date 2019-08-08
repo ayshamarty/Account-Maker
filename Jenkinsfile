@@ -15,7 +15,7 @@ pipeline{
 
                 stage('---redeploy stack---') {
                     steps {
-                            build job: "/job/Account-API-Deploy/master", wait: true
+                            build job: "Account-API-Deploy", wait: true
 
 			}
 		}
